@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rede Cristã - Comunidade</title>
+<style>
+:root{
+  --bg:#0f1724; 
+  --card:#0b1220; 
+  --accent:rgb(42, 20, 104); 
+  --muted:#9aa4b2; 
+  --glass: rgba(255,255,255,0.04); 
+  --maxw:1100px; 
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6;line-height:1.5;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px;}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+.brand{display:flex;gap:12px;align-items:center;}
+.logo{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,#2b6cb0,#1e3a8a);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;}
+nav{display:flex;gap:18px;}
+nav input{padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgb(42, 20, 104);color:var(--muted);font-weight:600;cursor:pointer;}
+nav input:hover{background:rgb(12,12,51);}
+section{margin:36px 0;}
+.hero-card, .mini, .profile-card, .chat-card, .post-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:18px;backdrop-filter:blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+h2,h3{margin:0 0 12px;}
+.muted{color:var(--muted);}
+.grid{display:grid;gap:16px;}
+.btn{padding:8px 14px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer;}
+.btn-primary{background:var(--accent);color:#e6eef6;}
+.profile-card img{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-right:12px;}
+.flex{display:flex;align-items:center;gap:12px;}
+.follow-btn{padding:6px 12px;background:var(--accent);color:#e6eef6;border:none;border-radius:8px;cursor:pointer;}
+.chat-card{max-height:300px;overflow-y:auto;}
+.post-card img{width:100%;border-radius:12px;margin-top:8px;}
+@media(max-width:980px){.grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="brand">
+<div class="logo">RC</div>
+<div>
+<div style="font-weight:800">Rede Cristã</div>
+<div class="muted">Comunidade | Louvor | Vida</div>
+</div>
+</div>
+<nav>
+<input type="button" value="Perfil">
+<input type="button" value="Posts">
+<input type="button" value="Conversas">
+<input type="button" value="Amigos">
+</nav>
+</header>
+
+<main>
+<section id="perfil">
+<div class="profile-card flex" style="justify-content:space-between;">
+<div class="flex">
+<img src="manancial.jpg" alt="Usuário"/>
+<div>
+<div style="font-weight:800;">Lev. Karyn Bianca</div>
+<div class="muted">Apóstola | 23 anos | Brasil</div>
+<p class="muted" style="margin-top:4px;">“Amar e servir é nosso chamado!”</p>
+</div>
+</div>
+<button class="follow-btn">Seguir</button>
+</div>
+</section>
+
+<section id="posts">
+<h2>Posts Recentes</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr 1fr;">
+<div class="post-card">
+<div style="font-weight:800;">Lev. Karyn Bianca</div>
+<p class="muted" style="margin-top:4px;">Dia de louvor e oração com a juventude!</p>
+<img src="jovens.jpg" alt="Post">
+</div>
+<div class="post-card">
+<div style="font-weight:800;">Ap. Valdeir</div>
+<p class="muted" style="margin-top:4px;">Reflexão sobre fé e transformação.</p>
+<img src="adoradores.jpg" alt="Post">
+</div>
+<div class="post-card">
+<div style="font-weight:800;">Irmã Beatriz</div>
+<p class="muted" style="margin-top:4px;">Compartilhando uma palavra de esperança.</p>
+</div>
+</div>
+</section>
+
+<section id="conversas">
+<h2>Conversas</h2>
+<div class="chat-card mini">
+<div class="flex" style="justify-content:space-between;margin-bottom:8px;">
+<div style="font-weight:700;">Lev. Karyn Bianca</div>
+<div class="muted" style="font-size:12px;">12:34</div>
+</div>
+<p class="muted">Olá! Você vem para o culto hoje?</p>
+<hr style="border-color:rgba(255,255,255,0.1);">
+<div class="flex" style="justify-content:space-between;margin-bottom:8px;">
+<div style="font-weight:700;">Ap. Valdeir</div>
+<div class="muted" style="font-size:12px;">11:20</div>
+</div>
+<p class="muted">Vamos ter uma live de louvor hoje à noite.</p>
+</div>
+</section>
+
+<section id="amigos">
+<h2>Amigos & Seguidores</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+<div class="profile-card flex">
+<img src="manancial.jpg" alt="Amigo">
+<div>
+<div style="font-weight:800;">Lev. Karyn Bianca</div>
+<div class="muted">Seguidor</div>
+</div>
+</div>
+<div class="profile-card flex">
+<img src="adoradores.jpg" alt="Amigo">
+<div>
+<div style="font-weight:800;">Louvor Kids</div>
+<div class="muted">Seguidor</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<span>© 2025 • Rede Cristã</span>
+<div class="footer-social flex">
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" height="24"></a>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24" height="24"></a>
+</div>
+</footer>
+</div>
+</body>
+</html>
