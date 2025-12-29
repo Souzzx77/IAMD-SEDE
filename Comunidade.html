@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rede Cristã</title>
+<style>
+    input[type="button"] {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--accent-yellow);
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+:root{
+  --bg:#121212;
+  --card:#1e1e1e;
+  --accent-yellow:#f6c84c;
+  --accent-blue:#2b6cb0;
+  --muted:#aaaaaa;
+  --maxw:1100px;
+  font-family: Inter, system-ui, sans-serif;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:#eee;line-height:1.5;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:20px;}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #222;}
+.logo{font-weight:800;font-size:20px;color:var(--accent-yellow);}
+nav{display:flex;align-items:center;gap:20px;}
+nav button{background:none;border:none;color:#eee;cursor:pointer;font-size:16px;display:flex;align-items:center;gap:6px;font-weight:600;}
+nav button:hover{color:var(--accent-yellow);}
+.feed{display:flex;gap:20px;margin-top:20px;}
+.main-feed{flex:3;display:flex;flex-direction:column;gap:20px;}
+.sidebar{flex:1;display:flex;flex-direction:column;gap:20px;}
+.story-container{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;}
+.story{width:50px;height:50px;border-radius:50%;border:2px solid var(--accent-yellow);flex-shrink:0;overflow:hidden;}
+.story img{width:100%;height:100%;object-fit:cover;}
+.post-card{background:var(--card);border-radius:16px;padding:12px;box-shadow:0 5px 20px rgba(0,0,0,0.5);}
+.post-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.post-header img{width:35px;height:35px;border-radius:50%;object-fit:cover;}
+.post-actions{display:flex;gap:10px;margin-top:6px;}
+.post-actions button{background:none;border:none;color:var(--muted);cursor:pointer;font-weight:600;}
+.post-actions button:hover{color:var(--accent-yellow);}
+.profile-card{background:var(--card);padding:10px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;}
+.follow-btn{padding:5px 10px;background:var(--accent-yellow);color:#121212;border:none;border-radius:8px;cursor:pointer;font-weight:700;}
+.muted{color:var(--muted);}
+@media(max-width:900px){.feed{flex-direction:column;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="logo">Rede Cristã</div>
+<nav>
+<input type="button" value="🏠 Inicio" onclick="location.href='Comunidade.html'">
+<input type="button" value="📩 Direct" onclick="location.href='Direct.html'">
+<input type="button" value="👤 Perfil" onclick="location.href='Perfil.html'">
+</nav>
+</header>
+
+<div class="feed">
+<div class="main-feed">
+  <!-- STORIES -->
+  <div class="story-container">
+    <div class="story"><img src="manancial.jpg" alt="story1"></div>
+    <div class="story"><img src="adoradores.jpg" alt="story2"></div>
+    <div class="story"><img src="jovens.jpg" alt="story3"></div>
+    <div class="story"><img src="manancial.jpg" alt="story4"></div>
+  </div>
+
+  <!-- POSTS -->
+  <div class="post-card">
+    <div class="post-header">
+      <img src="manancial.jpg" alt="avatar">
+      <div>
+        <div style="font-weight:800;">Lev. Karyn Bianca</div>
+        <div class="muted" style="font-size:12px;">15 min atrás</div>
+      </div>
+    </div>
+    <p>Momento de louvor intenso com a juventude!</p>
+    <img src="jovens.jpg" alt="post image" style="width:100%;margin-top:8px;border-radius:12px;height:180px;object-fit:cover;">
+    <div class="post-actions">
+      <button>❤️ Curtir</button>
+      <button>💬 Comentar</button>
+      <button>🔗 Compartilhar</button>
+    </div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-header">
+      <img src="adoradores.jpg" alt="avatar">
+      <div>
+        <div style="font-weight:800;">Ap. Valdeir</div>
+        <div class="muted" style="font-size:12px;">1h atrás</div>
+      </div>
+    </div>
+    <p>Reflexão sobre fé e esperança em Cristo.</p>
+    <img src="adoradores.jpg" alt="post image" style="width:100%;margin-top:8px;border-radius:12px;height:180px;object-fit:cover;">
+    <div class="post-actions">
+      <button>❤️ Curtir</button>
+      <button>💬 Comentar</button>
+      <button>🔗 Compartilhar</button>
+    </div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h3>Perfis sugeridos</h3>
+<div class="profile-card">
+  <div style="display:flex;gap:10px;align-items:center;">
+    <img src="manancial.jpg" alt="user" style="width:35px;height:35px;border-radius:50%;object-fit:cover;">
+    <div>
+      <div style="font-weight:800;">Lev. Karyn Bianca</div>
+      <div class="muted" style="font-size:12px;">Seguidor</div>
+    </div>
+  </div>
+  <button class="follow-btn">Seguir</button>
+</div>
+
+<div class="profile-card">
+  <div style="display:flex;gap:10px;align-items:center;">
+    <img src="adoradores.jpg" alt="user" style="width:35px;height:35px;border-radius:50%;object-fit:cover;">
+    <div>
+      <div style="font-weight:800;">Louvor Kids</div>
+      <div class="muted" style="font-size:12px;">Seguidor</div>
+    </div>
+  </div>
+  <button class="follow-btn">Seguir</button>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

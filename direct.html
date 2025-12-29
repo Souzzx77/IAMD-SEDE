@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direct Cristão</title>
+<style>
+:root{
+  --bg:#0f1724;
+  --accent-blue:#2b6cb0;
+  --accent-yellow:#f6c84c;
+  --muted:#9aa4b2;
+  --card:#0b1220;
+  --glass:rgba(255,255,255,0.04);
+  font-family: Inter, sans-serif;
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#e6eef6;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+header{
+  display:flex;
+  align-items:center;
+  padding:12px 16px;
+  background:var(--card);
+}
+#back-btn{
+  background:transparent;
+  border:none;
+  color:var(--accent-yellow);
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  margin-right:16px;
+}
+header h1{
+  font-size:18px;
+  margin:0;
+  flex:1;
+}
+.direct-container{
+  flex:1;
+  display:flex;
+  overflow:hidden;
+}
+.contacts{
+  width:260px;
+  background:var(--card);
+  display:flex;
+  flex-direction:column;
+  overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.1);
+}
+.contact{
+  display:flex;
+  align-items:center;
+  padding:12px;
+  cursor:pointer;
+  gap:12px;
+}
+.contact:hover{
+  background:rgba(255,255,255,0.05);
+}
+.contact img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.chat-area{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  background:#121826;
+}
+.messages{
+  flex:1;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  overflow-y:auto;
+}
+.message{
+  max-width:60%;
+  margin-bottom:12px;
+  padding:10px 14px;
+  border-radius:18px;
+  word-wrap:break-word;
+}
+.message.received{
+  align-self:flex-start;
+  background:rgba(255,255,255,0.05);
+  color:#e6eef6;
+}
+.message.user{
+  align-self:flex-end;
+  background:var(--accent-yellow);
+  color:#0f0f18;
+}
+.chat-input{
+  display:flex;
+  padding:12px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  background:var(--card);
+}
+.chat-input input{
+  flex:1;
+  padding:10px 14px;
+  border-radius:20px;
+  border:none;
+  background:rgba(255,255,255,0.05);
+  color:#e6eef6;
+  outline:none;
+}
+.chat-input button{
+  margin-left:12px;
+  padding:10px 16px;
+  border-radius:20px;
+  border:none;
+  background:var(--accent-blue);
+  color:#fff;
+  cursor:pointer;
+  font-weight:700;
+}
+::-webkit-scrollbar{
+  width:6px;
+}
+::-webkit-scrollbar-thumb{
+  background:var(--muted);
+  border-radius:3px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <button id="back-btn" onclick="history.back()">&#8592; Voltar</button>
+  <h1>Direct Cristão</h1>
+</header>
+
+<div class="direct-container">
+  <!-- Lista de contatos -->
+  <div class="contacts">
+    <div class="contact">
+      <img src="https://via.placeholder.com/45" alt="avatar">
+      <div>
+        <div style="font-weight:700;">João</div>
+        <div style="font-size:12px; color:var(--muted);">Online</div>
+      </div>
+    </div>
+    <div class="contact">
+      <img src="https://via.placeholder.com/45" alt="avatar">
+      <div>
+        <div style="font-weight:700;">Maria</div>
+        <div style="font-size:12px; color:var(--muted);">Offline</div>
+      </div>
+    </div>
+    <div class="contact">
+      <img src="https://via.placeholder.com/45" alt="avatar">
+      <div>
+        <div style="font-weight:700;">Pastor André</div>
+        <div style="font-size:12px; color:var(--muted);">Online</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Área do chat -->
+  <div class="chat-area">
+    <div class="messages" id="messages">
+      <div class="message received">Olá! Seja bem-vindo à nossa rede cristã.</div>
+      <div class="message user">Oi! Que alegria estar aqui!</div>
+      <div class="message received">Que bom ter você aqui! Compartilhe suas experiências de fé.</div>
+    </div>
+
+    <form class="chat-input" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById('chat-form');
+const input = document.getElementById('chat-input');
+const messages = document.getElementById('messages');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const text = input.value.trim();
+  if(text === "") return;
+
+  // Mensagem do usuário
+  const msg = document.createElement('div');
+  msg.className = 'message user';
+  msg.textContent = text;
+  messages.appendChild(msg);
+  input.value = '';
+  messages.scrollTop = messages.scrollHeight;
+
+  // Resposta simulada
+  setTimeout(() => {
+    const reply = document.createElement('div');
+    reply.className = 'message received';
+    reply.textContent = "Mensagem recebida!";
+    messages.appendChild(reply);
+    messages.scrollTop = messages.scrollHeight;
+  }, 800);
+});
+</script>
+
+</body>
+</html>
