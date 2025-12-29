@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>LOGIN IAMD – SEDE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --bg-deep:#071022;
+      --card:#0b1220;
+      --glass:rgba(255,255,255,0.04);
+      --accent:#f6c84c;
+      --muted:#9aa4b2;
+      --text:#e6eef6;
+      --primary:#2b6cb0;
+      --maxw:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),var(--bg-deep));
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    header{
+      padding:4rem 1.5rem;
+      text-align:center;
+      background:linear-gradient(160deg,#1e3a8a,#0b1220);
+    }
+
+    header h1{
+      margin:0;
+      font-size:2.6rem;
+      letter-spacing:1px;
+    }
+
+    header p{
+      margin-top:1rem;
+      color:var(--muted);
+      font-size:1.1rem;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:0.8rem;
+      padding:1rem;
+      background:rgba(11,18,32,0.85);
+      backdrop-filter:blur(8px);
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+
+    nav button{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+      color:var(--muted);
+      padding:0.55rem 1.2rem;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.25s;
+    }
+
+    nav button:hover{
+      background:#111c35;
+      color:var(--text);
+    }
+
+    main{
+      max-width:var(--maxw);
+      margin:3rem auto;
+      padding:0 1.2rem;
+    }
+
+    section{
+      background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
+      border-radius:18px;
+      padding:2.2rem;
+      margin-bottom:2.5rem;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    section h2{
+      margin-top:0;
+      color:var(--accent);
+      font-size:1.8rem;
+    }
+
+    /* LOGIN */
+    #login{
+      max-width:480px;
+      margin:0 auto 3rem;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    input{
+      padding:0.75rem;
+      border-radius:10px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+      color:var(--text);
+      font-size:1rem;
+    }
+
+    input::placeholder{
+      color:var(--muted);
+    }
+
+    .btn-login{
+      background:var(--accent);
+      color:#051223;
+      border:none;
+      padding:0.85rem;
+      border-radius:10px;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .btn-login:hover{
+      filter:brightness(0.95);
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.5rem;
+      margin-top:1.5rem;
+    }
+
+    .card{
+      background:var(--card);
+      padding:1.6rem;
+      border-radius:14px;
+    }
+
+    .card strong{
+      color:var(--accent);
+      font-size:1.1rem;
+    }
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:2.5rem 1.2rem;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    footer span{
+      color:var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Igreja Apostólica Manancial de Deus</h1>
+  <p>Onde a Palavra flui. Onde a Presença permanece.</p>
+</header>
+
+<nav>
+  <button onclick="location.href='#sobre'">Sobre</button>
+  <button onclick="location.href='#cultos'">Cultos</button>
+</nav>
+
+<main>
+
+  <section id="login">
+    <h2>Cadastro</h2>
+    <form>
+      <input type="text" placeholder="Login" required>
+      <input type="password" placeholder="Senha" required>
+      <input class="btn-login" type="button" value="Entrar" onclick="location.href='interface1.html'">
+    </form>
+  </section>
+
+  <section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>
+      Não somos um prédio. Somos um povo.
+      A Igreja Apostólica Manancial de Deus nasce com um chamado claro:
+      liberar vida, verdade e presença.
+    </p>
+  </section>
+
+  <section id="cultos">
+    <h2>Nossos Cultos</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Domingo</strong>
+        <p>10h e 18h – Culto da Família</p>
+      </div>
+      <div class="card">
+        <strong>Terça & Sexta</strong>
+        <p>19h30 – Culto de Busca do Espírito Santo & Libertação</p>
+      </div>
+      <div class="card">
+        <strong>Local</strong>
+        <p>Rua Leopoldo de Passos Lima, 371<br>Morro Doce – SP</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-social">
+    <a href="https://www.instagram.com/iamdsede/"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" height="24"></a>
+    <a href="https://www.instagram.com/iamdjovens/"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" height="24"></a>
+    <a href="https://www.tiktok.com/@iamdsede"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" width="24" height="24"></a>
+    <a href="https://www.youtube.com/@iamdsede"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24" height="24"></a>
+    <footer class="footer">
+    <span>© 2025 • Igreja Apostólica Manancial de Deus</span>
+    </div>
+</footer> 
+
+</body>
+</html>
