@@ -1,7 +1,7 @@
 # IAMD - SEDE
 Site dedicado a Igreja Apostólica Manancial de Deus<br>
 com intuiito de alcançar vidas diariamente e glorificar<br> 
-o nome do Senhor pelas redes sociais.
+o nome do Senhor pelas redes sociais.🙏🏽❤️‍🔥
 
 Site criado com HTML, CSS e JavaScript.
 
